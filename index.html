@@ -1,0 +1,314 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Jobs - O Visionário da Tecnologia</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --card-bg: #121212;
+            --text-color: #f5f5f7;
+            --secondary-text: #86868b;
+            --accent-color: #2997ff;
+            --border-color: #333336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header / Nav */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            background: radial-gradient(circle at center, #1c1c1e 0%, #000 70%);
+        }
+
+        .hero img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+        }
+
+        /* Content Sections */
+        .section {
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary-text);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .card.reverse {
+            direction: rtl;
+        }
+
+        .card.reverse .card-content {
+            direction: ltr;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .card-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-content p {
+            color: var(--secondary-text);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Interactive Quote Generator */
+        .quote-box {
+            background: linear-gradient(145deg, #1e1e1e, #111);
+            border-radius: 18px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            margin: 4rem 0;
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            border-radius: 980px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #0071e3;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .card, .card.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Steve Jobs</div>
+            <ul>
+                <li><a href="#biografia">Biografia</a></li>
+                <li><a href="#primeiro-lancamento">Primeiro Lançamento</a></li>
+                <li><a href="#iphone">Primeiro iPhone</a></li>
+                <li><a href="#frases">Frases</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg" alt="Steve Jobs">
+        <h1>Steve Jobs</h1>
+        <p>"A única maneira de fazer um excelente trabalho é amar o que você faz."</p>
+    </section>
+
+    <section id="biografia" class="section">
+        <h2 class="section-title">O Visionário</h2>
+        <p class="section-subtitle">Empresário, inventor e magnata que mudou o mundo da tecnologia.</p>
+        
+        <div class="card">
+            <div class="card-content">
+                <h3>Sua Jornada</h3>
+                <p>Nascido em 1955, Steve Jobs cofundou a Apple em 1976 na garagem dos seus pais ao lado de Steve Wozniak. Com seu foco obsessivo por design, simplicidade e inovação, ele transformou completamente a indústria de computadores, música, telefonia e animação digital.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80" alt="Apple Design Concept">
+        </div>
+    </section>
+
+    <section id="primeiro-lancamento" class="section">
+        <h2 class="section-title">O Primeiro Lançamento</h2>
+        <p class="section-subtitle">O nascimento da Apple Computer Inc.</p>
+
+        <div class="card reverse">
+            <div class="card-content">
+                <h3>Apple I & Macintosh (1976 - 1984)</h3>
+                <p>O primeiro produto da Apple foi o **Apple I**, construído manualmente por Wozniak e apresentado por Jobs. Anos mais tarde, em 1984, Jobs revelou ao mundo o **Macintosh**, o primeiro computador pessoal bem-sucedido a utilizar uma interface gráfica e um mouse.</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Macintosh_128k_trans.png" alt="Macintosh 1984">
+        </div>
+    </section>
+
+    <section id="iphone" class="section">
+        <h2 class="section-title">A Revolução Touchscreen</h2>
+        <p class="section-subtitle">2007: O ano em que o telefone foi reinventado.</p>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>O Primeiro iPhone</h3>
+                <p>Em 9 de janeiro de 2007, Steve Jobs subiu ao palco para apresentar "três produtos revolucionários": um iPod com controle de toque, um telefone e um navegador de internet. Não eram três aparelhos, mas sim apenas um: o **iPhone original**. Ele aboliu o teclado físico em favor de uma tela multi-touch expansiva.</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/iPhone_1G_in_dock.png" alt="Primeiro iPhone 2007">
+        </div>
+    </section>
+
+    <section id="frases" class="section">
+        <h2 class="section-title">Pensamentos e Filosofia</h2>
+        <p class="section-subtitle">Clique no botão para ver ensinamentos marcantes de Steve Jobs.</p>
+
+        <div class="quote-box">
+            <div class="quote-text" id="quote">"Cada dia é uma oportunidade para fazer algo incrível."</div>
+            <button class="btn" onclick="novaFrase()">Nova Frase</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Desenvolvido em homenagem ao legado de Steve Jobs (1955–2011).</p>
+    </footer>
+
+    <script>
+        const frases = [
+            "\"A inovação distingue um líder de um seguidor.\"",
+            "\"Seja um parâmetro de qualidade. Algumas pessoas não estão acostumadas a um ambiente onde a excelência é esperada.\"",
+            "\"A memória de que estarei morto em breve é a ferramenta mais importante para me ajudar a fazer as grandes escolhas da vida.\"",
+            "\"Não faz sentido contratar pessoas inteligentes e dizer-lhes o que fazer; nós contratamos pessoas inteligentes para que elas nos digam o que fazer.\"",
+            "\"A tecnologia não é nada. O importante é que você tenha fé nas pessoas, que elas sejam basicamente boas e inteligentes.\"",
+            "\"Cada dia é uma oportunidade para fazer algo incrível.\""
+        ];
+
+        function novaFrase() {
+            const index = Math.floor(Math.random() * frases.length);
+            document.getElementById("quote").innerText = frases[index];
+        }
+    </script>
+</body>
+</html>
